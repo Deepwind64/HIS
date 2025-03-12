@@ -1,0 +1,67 @@
+spring:
+  main:
+    allow-circular-references: true
+  profiles:
+    active: test
+  data:
+    redis:
+      host: 47.92.210.237
+      port: 6379
+      database: 0
+      password: --redis0415
+      timeout:  1000
+      lettuce:
+        pool:
+          max-active: 8
+          minIdle: 1
+          maxIdle: 5
+        shutdown-timeout: 3000
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.92.210.237/easystudy?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: dd00c9db427daebf
+
+  mvc:
+    static-path-pattern: /data
+  web:
+    resources:
+      static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com:
+      example:
+        easystudy:
+          mapper: debug
+          service: debug
+          controller: debug
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: token
+  # token 有效期（单位：秒） 默认3天，-1 代表永久有效
+  timeout: 259200
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: false
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: true
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+
+file:
+  picpath: ${es.file.picpath}
+server:
+  location: ${es.server.location}
