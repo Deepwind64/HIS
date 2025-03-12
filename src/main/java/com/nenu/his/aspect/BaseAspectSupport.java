@@ -1,4 +1,4 @@
-package com.example.easystudy.aspect;
+package com.nenu.his.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;

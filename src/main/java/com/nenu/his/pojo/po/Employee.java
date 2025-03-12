@@ -1,77 +1,65 @@
-package com.neuedu.pojo;
+package com.nenu.his.pojo.po;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.*;
 
 import java.util.List;
 
-public class Employee {
-	private Integer id;
-	private String realname;
-	private String password;
-	private Integer deptmentId;
-	private Integer regist_levelId;
-	private Integer schedulingId;
-	private Integer delmark;
-	private Integer role;
-	private List<Permit> permitList;
-	private String token;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getRealname() {
-		return realname;
-	}
-	public void setRealname(String realname) {
-		this.realname = realname;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Integer getDeptmentId() {
-		return deptmentId;
-	}
-	public void setDeptmentId(Integer deptmentId) {
-		this.deptmentId = deptmentId;
-	}
-	public Integer getRegist_levelId() {
-		return regist_levelId;
-	}
-	public void setRegist_levelId(Integer regist_levelId) {
-		this.regist_levelId = regist_levelId;
-	}
-	public Integer getSchedulingId() {
-		return schedulingId;
-	}
-	public void setSchedulingId(Integer schedulingId) {
-		this.schedulingId = schedulingId;
-	}
-	public Integer getDelmark() {
-		return delmark;
-	}
-	public void setDelmark(Integer delmark) {
-		this.delmark = delmark;
-	}
-	public Integer getRole() {
-		return role;
-	}
-	public void setRole(Integer role) {
-		this.role = role;
-	}
-	public List<Permit> getPermitList() {
-		return permitList;
-	}
-	public void setPermitList(List<Permit> permitList) {
-		this.permitList = permitList;
-	}
-	public String getToken() {
-		return token;
-	}
-	public void setToken(String token) {
-		this.token = token;
-	}
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("employee")
+@EqualsAndHashCode(callSuper = true)
+public class Employee extends Base{
+	/**
+	 * 真实姓名
+	 */
+	@TableField(value = "realname")
+	private String realName;
 
+	/**
+	 * 密码
+	 */
+	@TableField(value = "password")
+	private String password;
+
+	/**
+	 * 所在科室ID
+	 */
+	@TableField(value = "department_id")
+	private Integer departmentId;
+
+	/**
+	 * 挂号级别ID
+	 */
+	@TableField(value = "register_level_id")
+	private Integer registerLevelId;
+
+	/**
+	 * 排班ID
+	 */
+	@TableField(value = "scheduling_id")
+	private Integer schedulingId;
+
+	/**
+	 * 生效标记
+	 */
+	@TableLogic(value = "0", delval = "1")
+	@TableField(value = "del_mark")
+	private Integer delMark;
+
+	/**
+	 * 角色
+	 */
+	@TableField(value = "role")
+	private Integer role;
+
+	/**
+	 * 权限列表
+	 */
+	@TableField(exist = false)
+	private List<Permit> permitList;
 }

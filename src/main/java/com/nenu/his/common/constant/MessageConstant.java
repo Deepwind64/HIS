@@ -1,4 +1,4 @@
-package com.example.easystudy.common.constant;
+package com.nenu.his.common.constant;
 
 /**
  * 信息提示常量类

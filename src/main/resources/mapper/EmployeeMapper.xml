@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.his.dao.EmployeeMapper">
+    <select id="getPermitList" resultType="com.nenu.his.pojo.po.Permit">
+        select p.id, p.permit_name, p.permit_path, p.permit_icon, p.permit_parent from employee
+            left join his.role r on employee.role = r.id
+            left join his.role_permit rp on r.id = rp.role_id
+            left join his.permit p on p.id = rp.permit_id
+            where employee.id = #{userId}
+    </select>
+    <select id="getAvailableDoctor" resultType="com.nenu.his.pojo.vo.EmployeeVO">
+        select e.id, e.realname from employee e
+        left join his.department d on e.department_id = d.id
+        left join his.regist_level r on e.register_level_id = r.id
+        left join his.scheduling s on e.scheduling_id = s.id
+        <where>
+            <!-- 部门名称过滤 -->
+            <if test="deptName != null">
+                d.dept_name = #{deptName}
+            </if>
+
+            <!-- 等级名称过滤 -->
+            <if test="registerLevelName != null">
+                AND r.regist_name = #{registerLevelName}
+            </if>
+
+            <!-- 周规则索引过滤 -->
+            <if test="weekRuleIndex != null">
+                AND SUBSTRING(s.week_rule, #{weekRuleIndex} + 1, 1) = '1'
+            </if>
+        </where>
+    </select>
+</mapper>

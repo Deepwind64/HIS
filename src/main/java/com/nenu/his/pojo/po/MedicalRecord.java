@@ -1,96 +1,81 @@
-package com.neuedu.pojo;
+package com.nenu.his.pojo.po;
 
-public class MedicalRecord {
-	private Integer id;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("medical_record")
+public class MedicalRecord extends Base{
+	/**
+	 * 关联挂号表id
+	 */
+	@TableField(value = "register_id")
 	private Integer registerId;
+
+	/**
+	 * 主诉
+	 */
+	@TableField(value = "readme")
 	private String readme;
-	private String present;
+
+	/**
+	 * 现病史
+	 */
+	@TableField(value = "present")
+	private String presentDisease;
+
+	/**
+	 * 现病治疗情况
+	 */
+	@TableField(value = "present_treat")
 	private String presentTreat;
+
+	/**
+	 * 既往史
+	 */
+	@TableField(value = "history")
 	private String history;
+
+	/**
+	 * 过敏史
+	 */
+	@TableField(value = "allergy")
 	private String allergy;
+
+	/**
+	 * 体格检查
+	 */
+	@TableField(value = "physique")
 	private String physique;
+
+	/**
+	 * 检查/检验建议
+	 */
+	@TableField(value = "proposal")
 	private String proposal;
-	private String careful;
+
+	/**
+	 * 注意事项
+	 */
+	@TableField(value = "precaution")
+	private String precaution;
+
+	/**
+	 * 断诊结果
+	 */
+	@TableField(value = "diagnosis")
 	private String diagnosis;
+
+	/**
+	 * 处理意见
+	 */
+	@TableField(value = "cure")
 	private String cure;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getRegisterId() {
-		return registerId;
-	}
-	public void setRegisterId(Integer registerId) {
-		this.registerId = registerId;
-	}
-	public String getReadme() {
-		return readme;
-	}
-	public void setReadme(String readme) {
-		this.readme = readme;
-	}
-	public String getPresent() {
-		return present;
-	}
-	public void setPresent(String present) {
-		this.present = present;
-	}
-	public String getPresentTreat() {
-		return presentTreat;
-	}
-	public void setPresentTreat(String presentTreat) {
-		this.presentTreat = presentTreat;
-	}
-	public String getHistory() {
-		return history;
-	}
-	public void setHistory(String history) {
-		this.history = history;
-	}
-	public String getAllergy() {
-		return allergy;
-	}
-	public void setAllergy(String allergy) {
-		this.allergy = allergy;
-	}
-	public String getPhysique() {
-		return physique;
-	}
-	public void setPhysique(String physique) {
-		this.physique = physique;
-	}
-	public String getProposal() {
-		return proposal;
-	}
-	public void setProposal(String proposal) {
-		this.proposal = proposal;
-	}
-	public String getCareful() {
-		return careful;
-	}
-	public void setCareful(String careful) {
-		this.careful = careful;
-	}
-	public String getDiagnosis() {
-		return diagnosis;
-	}
-	public void setDiagnosis(String diagnosis) {
-		this.diagnosis = diagnosis;
-	}
-	public String getCure() {
-		return cure;
-	}
-	public void setCure(String cure) {
-		this.cure = cure;
-	}
-	@Override
-	public String toString() {
-		return "MedicalRecord [id=" + id + ", registerId=" + registerId + ", readme=" + readme + ", present=" + present
-				+ ", presentTreat=" + presentTreat + ", history=" + history + ", allergy=" + allergy + ", physique="
-				+ physique + ", proposal=" + proposal + ", careful=" + careful + ", diagnosis=" + diagnosis + ", cure="
-				+ cure + "]";
-	}
-	
 }

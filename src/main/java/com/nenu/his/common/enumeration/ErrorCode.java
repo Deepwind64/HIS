@@ -1,4 +1,4 @@
-package com.example.easystudy.common.enumeration;
+package com.nenu.his.common.enumeration;
 
 /**
  * @author deepwind

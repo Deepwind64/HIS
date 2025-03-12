@@ -1,7 +1,9 @@
-package com.example.easystudy.common.exception;
+package com.nenu.his.common.exception;
 
-import com.example.easystudy.common.enumeration.ErrorCode;
-import com.example.easystudy.common.constant.MessageConstant;
+
+import com.nenu.his.common.constant.MessageConstant;
+import com.nenu.his.common.enumeration.ErrorCode;
+
 /**
  * 业务异常
  * @author deepwind

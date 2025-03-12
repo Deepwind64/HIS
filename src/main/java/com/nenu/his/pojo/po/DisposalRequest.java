@@ -1,91 +1,88 @@
-package com.neuedu.pojo;
+package com.nenu.his.pojo.po;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("disposal_request")
 public class DisposalRequest {
+	@TableId(value = "id", type = IdType.AUTO)
 	private Integer id;
+
+	/**
+	 * 挂号ID
+	 */
+	@TableField(value = "register_id")
 	private Integer registerId;
+
+	/**
+	 * 医疗技术ID
+	 */
+	@TableField(value = "medical_technology_id")
 	private Integer medicalTechnologyId;
+
+	/**
+	 * 处置信息
+	 */
+	@TableField(value = "disposal_info")
 	private String disposalInfo;
+
+	/**
+	 * 处置位置
+	 */
+	@TableField(value = "disposal_position")
 	private String disposalPosition;
-	private Date creationTime;
+
+	/**
+	 * 创建时间
+	 */
+	@TableField(value = "create_time")
+	private Date createTime;
+
+	/**
+	 * 处置员工ID
+	 */
+	@TableField(value = "disposal_employee_id")
 	private Integer disposalEmployeeId;
+
+	/**
+	 * 录入处置员工ID
+	 */
+	@TableField(value = "input_disposal_employee_id")
 	private Integer inputdisposalEmployeeId;
+
+	/**
+	 * 处置时间
+	 */
+	@TableField(value = "disposal_time")
 	private Date disposalTime;
+
+	/**
+	 * 处置结果
+	 */
+	@TableField(value = "disposal_result")
 	private String disposalResult;
+
+	/**
+	 * 处置状态
+	 */
+	@TableField(value = "disposal_state")
 	private String disposalState;
+
+	/**
+	 * 处置备注
+	 */
+	@TableField(value = "disposal_remark")
 	private String disposalRemark;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getRegisterId() {
-		return registerId;
-	}
-	public void setRegisterId(Integer registerId) {
-		this.registerId = registerId;
-	}
-	public Integer getMedicalTechnologyId() {
-		return medicalTechnologyId;
-	}
-	public void setMedicalTechnologyId(Integer medicalTechnologyId) {
-		this.medicalTechnologyId = medicalTechnologyId;
-	}
-	public String getDisposalInfo() {
-		return disposalInfo;
-	}
-	public void setDisposalInfo(String disposalInfo) {
-		this.disposalInfo = disposalInfo;
-	}
-	public String getDisposalPosition() {
-		return disposalPosition;
-	}
-	public void setDisposalPosition(String disposalPosition) {
-		this.disposalPosition = disposalPosition;
-	}
-	public Date getCreationTime() {
-		return creationTime;
-	}
-	public void setCreationTime(Date creationTime) {
-		this.creationTime = creationTime;
-	}
-	public Integer getDisposalEmployeeId() {
-		return disposalEmployeeId;
-	}
-	public void setDisposalEmployeeId(Integer disposalEmployeeId) {
-		this.disposalEmployeeId = disposalEmployeeId;
-	}
-	public Integer getInputdisposalEmployeeId() {
-		return inputdisposalEmployeeId;
-	}
-	public void setInputdisposalEmployeeId(Integer inputdisposalEmployeeId) {
-		this.inputdisposalEmployeeId = inputdisposalEmployeeId;
-	}
-	public Date getDisposalTime() {
-		return disposalTime;
-	}
-	public void setDisposalTime(Date disposalTime) {
-		this.disposalTime = disposalTime;
-	}
-	public String getDisposalResult() {
-		return disposalResult;
-	}
-	public void setDisposalResult(String disposalResult) {
-		this.disposalResult = disposalResult;
-	}
-	public String getDisposalState() {
-		return disposalState;
-	}
-	public void setDisposalState(String disposalState) {
-		this.disposalState = disposalState;
-	}
-	public String getDisposalRemark() {
-		return disposalRemark;
-	}
-	public void setDisposalRemark(String disposalRemark) {
-		this.disposalRemark = disposalRemark;
-	}
-	
 }

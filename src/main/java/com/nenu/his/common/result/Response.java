@@ -1,4 +1,4 @@
-package com.example.easystudy.common.result;
+package com.nenu.his.common.result;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

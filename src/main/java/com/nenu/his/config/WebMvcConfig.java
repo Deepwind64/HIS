@@ -1,7 +1,6 @@
-package com.example.easystudy.config;
+package com.nenu.his.config;
 
 import cn.dev33.satoken.interceptor.SaInterceptor;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;

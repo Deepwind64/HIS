@@ -1,9 +1,9 @@
-package com.example.easystudy.handler;
+package com.nenu.his.handler;
 
 import cn.dev33.satoken.exception.SaTokenException;
-import com.example.easystudy.common.enumeration.ErrorCode;
-import com.example.easystudy.common.exception.BaseException;
-import com.example.easystudy.common.result.Response;
+import com.nenu.his.common.enumeration.ErrorCode;
+import com.nenu.his.common.exception.BaseException;
+import com.nenu.his.common.result.Response;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;

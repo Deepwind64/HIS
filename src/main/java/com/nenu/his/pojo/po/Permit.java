@@ -1,56 +1,49 @@
-package com.neuedu.pojo;
+package com.nenu.his.pojo.po;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.*;
 
 import java.util.List;
 
-public class Permit {
-	private Integer id;
+
+/**
+ * @author deepwind
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("permit")
+@EqualsAndHashCode(callSuper = true)
+public class Permit extends Base{
+	/**
+	 * 权限名称
+	 */
+	@TableField(value = "permit_name")
 	private String permitName;
+
+	/**
+	 * 权限路径
+	 */
+	@TableField(value = "permit_path")
 	private String permitPath;
+
+	/**
+	 * 权限图标
+	 */
+	@TableField(value = "permit_icon")
 	private String permitIcon;
-	private String permitParent;
-	private Integer relmark;
+
+	/**
+	 * 父权限ID
+	 */
+	@TableField(value = "permit_parent")
+	private Integer permitParent;
+
+	/**
+	 * 子权限列表（不在数据库中存在）
+	 */
+	@TableField(exist = false)
 	private List<Permit> permitList;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getPermitName() {
-		return permitName;
-	}
-	public void setPermitName(String permitName) {
-		this.permitName = permitName;
-	}
-	public String getPermitPath() {
-		return permitPath;
-	}
-	public void setPermitPath(String permitPath) {
-		this.permitPath = permitPath;
-	}
-	public String getPermitIcon() {
-		return permitIcon;
-	}
-	public void setPermitIcon(String permitIcon) {
-		this.permitIcon = permitIcon;
-	}
-	public String getPermitParent() {
-		return permitParent;
-	}
-	public void setPermitParent(String permitParent) {
-		this.permitParent = permitParent;
-	}
-	public Integer getRelmark() {
-		return relmark;
-	}
-	public void setRelmark(Integer relmark) {
-		this.relmark = relmark;
-	}
-	public List<Permit> getPermitList() {
-		return permitList;
-	}
-	public void setPermitList(List<Permit> permitList) {
-		this.permitList = permitList;
-	}
-	
 }

@@ -1,69 +1,49 @@
-package com.neuedu.pojo;
+package com.nenu.his.pojo.po;
 
-import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class Prescription {
-	private Integer id;
+/**
+ * 处方
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("prescription")
+public class Prescription extends Base{
+	/**
+	 * 挂号id
+	 */
+	@TableField(value = "register_id")
 	private Integer registerId;
+
+	/**
+	 * 药品id
+	 */
+	@TableField(value = "drug_id")
 	private Integer drugId;
+
+	/**
+	 * 用法用量和频次
+	 */
+	@TableField(value = "drug_usage")
 	private String drugUsage;
+
+	/**
+	 * 数量
+	 */
+	@TableField(value = "drug_number")
 	private Integer drugNumber;
-	private Date creationTime;
+
+	/**
+	 * 状态(已开立、已缴费、已发药、已退药、已退费)
+	 */
+	@TableField(value = "drug_state")
 	private String drugState;
-	public Integer getDrugNumber() {
-		return drugNumber;
-	}
-	public void setDrugNumber(Integer drugNumber) {
-		this.drugNumber = drugNumber;
-	}
-	public Date getCreationTime() {
-		return creationTime;
-	}
-	public void setCreationTime(Date creationTime) {
-		this.creationTime = creationTime;
-	}
-	private DrugInfo drug;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getRegisterId() {
-		return registerId;
-	}
-	public void setRegisterId(Integer registerId) {
-		this.registerId = registerId;
-	}
-	public Integer getDrugId() {
-		return drugId;
-	}
-	public void setDrugId(Integer drugId) {
-		this.drugId = drugId;
-	}
-	public String getDrugUsage() {
-		return drugUsage;
-	}
-	public void setDrugUsage(String drugUsage) {
-		this.drugUsage = drugUsage;
-	}
-	public String getDrugState() {
-		return drugState;
-	}
-	public void setDrugState(String drugState) {
-		this.drugState = drugState;
-	}
-	public DrugInfo getDrug() {
-		return drug;
-	}
-	public void setDrug(DrugInfo drug) {
-		this.drug = drug;
-	}
-	@Override
-	public String toString() {
-		return "Prescription [id=" + id + ", registerId=" + registerId + ", drugId=" + drugId + ", drugUsage="
-				+ drugUsage + ", drugNumber=" + drugNumber + ", creationTime=" + creationTime + ", drugState="
-				+ drugState + ", drug=" + drug + "]";
-	}
-	
 }
+

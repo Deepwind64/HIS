@@ -1,8 +1,8 @@
 spring:
+  application:
+    name: HIS
   main:
     allow-circular-references: true
-  profiles:
-    active: test
   data:
     redis:
       host: 47.92.210.237
@@ -20,7 +20,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.92.210.237/easystudy?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://47.92.210.237/his?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: dd00c9db427daebf
 
@@ -34,8 +34,7 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 logging:
   level:
@@ -60,8 +59,3 @@ sa-token:
   token-style: uuid
   # 是否输出操作日志
   is-log: false
-
-file:
-  picpath: ${es.file.picpath}
-server:
-  location: ${es.server.location}

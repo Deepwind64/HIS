@@ -1,12 +1,11 @@
 package com.nenu.his.common.enumeration;
 
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 状态(已开立,已缴费,执行完成,已出结果,已退费,已作废)
  */
-public enum CheckState {
+public enum CommonState {
 
     OPENED("已开立"),
     PAID("已缴费"),
@@ -18,7 +17,7 @@ public enum CheckState {
     @Getter
     private final String state;
 
-    CheckState(String state) {
+    CommonState(String state) {
         this.state = state;
     }
 }

@@ -6,37 +6,23 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("regist_level")
-public class RegisterLevel extends Base{
+@TableName("settle_category")
+public class Payment extends Base{
 	/**
-	 * 号别编码
+	 * 类别编码
 	 */
-	@TableField(value = "regist_code")
-	private String registerLevelCode;
+	@TableField(value = "settle_code")
+	private String settleCode;
 
 	/**
-	 * 号别名称
+	 * 类别名称
 	 */
-	@TableField(value = "regist_name")
-	private String registerLevelName;
-
-	/**
-	 * 挂号费
-	 */
-	@TableField(value = "regist_fee")
-	private BigDecimal registerFee;
-
-	/**
-	 * 挂号限额
-	 */
-	@TableField(value = "regist_quota")
-	private Integer registerQuota;
+	@TableField(value = "settle_name")
+	private String settleName;
 
 	/**
 	 * 显示顺序号

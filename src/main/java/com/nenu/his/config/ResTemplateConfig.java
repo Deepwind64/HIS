@@ -1,4 +1,4 @@
-package com.example.easystudy.config;
+package com.nenu.his.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
