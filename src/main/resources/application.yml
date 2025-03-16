@@ -5,10 +5,10 @@ spring:
     allow-circular-references: true
   data:
     redis:
-      host: 47.92.210.237
+      host: 127.0.0.1
       port: 6379
       database: 0
-      password: --redis0415
+      password: ***
       timeout:  1000
       lettuce:
         pool:
@@ -20,9 +20,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.92.210.237/his?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1/his?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: dd00c9db427daebf
+    password: ***
 
   mvc:
     static-path-pattern: /data
