@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("disease")
-public class Disease {
+public class Disease extends Base{
     /**
      * 疾病助记编码
      */
@@ -28,7 +28,7 @@ public class Disease {
     /**
      * 国际ICD编码
      */
-    @TableField(value = "disease_icd")
+    @TableField(value = "diseaseICD")
     private String diseaseICD;
 
     /**

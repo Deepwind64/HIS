@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.his.dao.RegisterMapper">
+
+    <select id="searchRegister" resultType="com.nenu.his.pojo.vo.RegisterMedicalVO">
+        select r.id, r.real_name, m.id from register r
+            left join medical_record m on r.id = m.register_id
+        <where>
+            r.employee_id = #{employeeId}
+            <if test="caseNumber != null and caseNumber != ''">
+                OR r.case_number = #{caseNumber}
+            </if>
+            <if test="realName != null">
+                OR r.real_name LIKE CONCAT('%',#{realName},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

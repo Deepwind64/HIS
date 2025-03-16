@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class RegisterDTO {
@@ -17,7 +18,7 @@ public class RegisterDTO {
     private String cardNumber;
     // 出生日期
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime birthday;
+    private Date birthday;
     // 年龄
     private Integer age;
     // 年龄类型（岁、天）
@@ -26,7 +27,7 @@ public class RegisterDTO {
     private String homeAddress;
     // 看诊日期
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime visitDate;
+    private Date visitDate;
     // 午别（0-上午、1-下午）
     private Integer noon;
     // 挂号科室的id

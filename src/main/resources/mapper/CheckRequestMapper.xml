@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.his.dao.CheckRequestMapper">
+
+
+    <select id="getFinishedCheck" resultType="com.nenu.his.pojo.po.CheckRequest">
+        select * from check_request cr
+            left join register r on r.id = cr.register_id
+        <where>
+            r.departmentId = #{deptId}
+            AND cr.check_state = '已缴费'
+
+            <if test="registerName != null and registerName != ''">
+                and r.real_name like concat('%',#{registerName},'%')
+            </if>
+
+            <if test="caseNumber != null and caseNumber != ''">
+                and r.case_number like concat('%',#{caseNumber},'%')
+            </if>
+
+        </where>
+
+    </select>
+</mapper>

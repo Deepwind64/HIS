@@ -16,10 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("disposal_request")
-public class DisposalRequest {
-	@TableId(value = "id", type = IdType.AUTO)
-	private Integer id;
-
+public class DisposalRequest extends Base{
 	/**
 	 * 挂号ID
 	 */
@@ -45,12 +42,6 @@ public class DisposalRequest {
 	private String disposalPosition;
 
 	/**
-	 * 创建时间
-	 */
-	@TableField(value = "create_time")
-	private Date createTime;
-
-	/**
 	 * 处置员工ID
 	 */
 	@TableField(value = "disposal_employee_id")
@@ -60,7 +51,7 @@ public class DisposalRequest {
 	 * 录入处置员工ID
 	 */
 	@TableField(value = "input_disposal_employee_id")
-	private Integer inputdisposalEmployeeId;
+	private Integer inputDisposalEmployeeId;
 
 	/**
 	 * 处置时间

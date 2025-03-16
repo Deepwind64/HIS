@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -98,10 +99,10 @@ public class Register extends Base{
 	private Integer settleCategoryId;
 
 	/**
-	 * 病历本要否（要、否）
+	 * 病历本要否（是、否）
 	 */
 	@TableField(value = "is_book")
-	private Boolean isBooked;
+	private String needBook;
 
 	/**
 	 * 收费方式（现金、银行卡、微信、医保卡、支付宝）
@@ -109,6 +110,11 @@ public class Register extends Base{
 	@TableField(value = "regist_method")
 	private String registerMethod;
 
+	/**
+	 * 看诊日期
+	 */
+	@TableField(value = "visit_date")
+	private Date visitDate;
 	/**
 	 * 本次看诊状态（1-已挂号 2-医生接诊 3-看诊结束 4-已退号）
 	 */
@@ -131,9 +137,9 @@ public class Register extends Base{
 	public String toString() {
 		return "Register [id=" + id + ", caseNumber=" + caseNumber + ", realName=" + realName + ", gender=" + gender
 				+ ", cardNumber=" + cardNumber + ", birthday=" + birthday + ", age=" + age + ", ageType=" + ageType
-				+ ", homeAddress=" + homeAddress + ", visitDate=" + createTime + ", noon=" + noon + ", departmentId="
+				+ ", homeAddress=" + homeAddress + ", visitDate=" + visitDate + ", noon=" + noon + ", departmentId="
 				+ departmentId + ", employeeId=" + employeeId + ", registerLevelId=" + registerLevelId + ", settleCategoryId="
-				+ settleCategoryId + ", isBook=" + isBooked + ", registerMethod=" + registerMethod + ", visitState="
+				+ settleCategoryId + ", isBook=" + needBook + ", registerMethod=" + registerMethod + ", visitState="
 				+ visitState + ", registerMoney=" + registerMoney + "]";
 	}
 }
